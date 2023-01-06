@@ -1,0 +1,13 @@
+{
+  "sunny": "Sunny",
+  "cloudy": "Cloudy",
+  "rain": "Rain",
+  "snow": "Snow",
+  "precipitation": "Precipitation",
+  "humidity": "Humidity",
+  "wind": "Wind",
+  "change_location": "Change Location",
+  "mm": "mm",
+  "m/s": "m/s"
+
+}

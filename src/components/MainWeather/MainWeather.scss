@@ -1,0 +1,34 @@
+.main-weather{
+    &__icon{
+        background: url('../../../public/icons/sun.svg') no-repeat;
+        width: 95px;
+        height: 95px;
+    }
+    &__temperature{
+        font-size: 50px;
+        line-height: 61px;
+        font-weight: 700;
+        margin: 9px 0 13px 0;
+    }
+    &__type{
+        font-size: 30px;
+        line-height: 37px;
+        font-weight: 700;
+    }
+
+    .skeleton{
+        span{
+            height: 37px;
+            margin: 0;
+            &.icon{
+                width: 95px;
+                height: 95px;
+            }
+            &.temperature{
+                width: 150px;
+                height: 61px;
+                margin: 9px 0 13px 0;
+            }
+        }
+    }
+}

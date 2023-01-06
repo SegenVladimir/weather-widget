@@ -1,0 +1,67 @@
+.main-info{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 493px;
+    height: calc(100% + 42px);
+    padding: 48px 32px;
+    margin: -21px 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 30px;
+    color: #fff;
+    z-index: 0;
+
+    &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(152.19deg, rgba(136, 235, 239, 0.9) -0.04%, rgba(83, 91, 230, 0.9) 100%);
+        border-radius: 30px;
+        opacity: 0.8;
+        z-index: -1;
+    }
+    &__title{
+        font-size: 37px;
+        line-height: 45px;
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+    &__subtitle{
+        font-size: 22px;
+        line-height: 27px;
+        font-weight: 400;
+        margin-bottom: 24px;
+    }
+    &__location{
+        position: relative;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 500;
+        padding-left: 35px;
+        &:before{
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 0;
+            width: 27px;
+            height: 27px;
+            background: url('../../../public/icons/location.svg') no-repeat;
+        }
+    }
+
+    .skeleton{
+        span{
+            width: 100px;
+            height: 24px;
+            background: linear-gradient(110deg, #222831 10%, #1E1E1E 18%, #222831 30%);
+            background-size: 200% 100%;
+            opacity: 0.3;
+        }
+    }
+}

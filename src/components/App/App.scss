@@ -1,0 +1,34 @@
+.app{
+    min-width: 100vw;
+    min-height: 100vh;
+    background: #1E1E1E;
+    padding-top: 188px;
+    &__box{
+        position: relative;
+        width: 1013px;
+        height: 623px;
+        margin: auto;
+        display: flex;
+    }
+}
+
+.skeleton{
+    display: block;
+    width: 100%;
+    span{
+        display: block;
+        width: 100%;
+        height: 34px;
+        margin-bottom: 16px;
+        background: linear-gradient(90deg, #272E37 8%, #222831 18%, #272E37 33%);
+        border-radius: 5px;
+        background-size: 200% 100%;
+        animation: 1.5s shine linear infinite;
+    }
+}
+
+@keyframes shine {
+    to {
+        background-position-x: -200%;
+    }
+}
