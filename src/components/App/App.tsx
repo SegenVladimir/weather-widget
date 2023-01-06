@@ -19,12 +19,15 @@ interface AppData {
     weather?: TDataWeather;
     image?: string;
     loading?: boolean;
+    locationEnabled?: boolean;
 }
 export const AppContext = createContext<AppData>({});
 export const App = () => {
     const { i18n } = useTranslation();
 
     const [loading, setLoading] = useState<boolean>(true);
+    const [locationEnabled, setLocationEnabled] = useState<boolean>(true);
+
     const [address, setAddress] = useState<TAddress>();
     const [weather, setWeather] = useState<TDataWeather>();
 
@@ -33,13 +36,17 @@ export const App = () => {
     useEffect(() => {
         i18n.changeLanguage(navigator.language);
         const location = window.navigator && window.navigator.geolocation;
-        location.getCurrentPosition((position) => {
-            getAddress(position.coords.latitude, position.coords.longitude).then((response) => setAddress(response));
-            getWeather(position.coords.latitude, position.coords.longitude).then((response) => {
-                setWeather(response);
-                setLoading(false);
-            });
-        });
+
+        location.getCurrentPosition(
+            (position) => {
+                getAddress(position.coords.latitude, position.coords.longitude).then((response) => setAddress(response));
+                getWeather(position.coords.latitude, position.coords.longitude).then((response) => {
+                    setWeather(response);
+                    setLoading(false);
+                });
+            },
+            () => setLocationEnabled(false)
+        );
     }, []);
 
     useEffect(() => {
@@ -62,6 +69,7 @@ export const App = () => {
                 weather: weather,
                 image: image,
                 loading: loading,
+                locationEnabled: locationEnabled,
             }}
         >
             <div className="app">

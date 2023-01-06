@@ -5,6 +5,7 @@ import { ParametersWeather } from '../ParametersWeather/ParametersWeather';
 import { DatesWeather } from '../DatesWeather/DatesWeather';
 import { AppContext } from '../App/App';
 import { useTranslation } from 'react-i18next';
+import { NoLocation } from '../NoLocation/NoLocation';
 
 export const MoreInfo = () => {
     const context = useContext(AppContext);
@@ -30,11 +31,16 @@ export const MoreInfo = () => {
             unit: context.weather ? t(context.weather.units.windspeed) : '',
         },
     ];
-
     return (
         <div className="more-info">
-            <ParametersWeather parameters={parameters} isLoading={context.loading} />
-            <DatesWeather weekData={context.weather?.weekData} isLoading={context.loading} />
+            {context.locationEnabled ? (
+                <>
+                    <ParametersWeather parameters={parameters} isLoading={context.loading} />
+                    <DatesWeather weekData={context.weather?.weekData} isLoading={context.loading} />
+                </>
+            ) : (
+                <NoLocation />
+            )}
         </div>
     );
 };
