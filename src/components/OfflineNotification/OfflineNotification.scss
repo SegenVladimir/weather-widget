@@ -1,0 +1,13 @@
+.offline-notification{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 14px;
+    background: #FF6347;
+    text-align: center;
+    &__text{
+        color: #fff;
+        font-size: 16px;
+    }
+}
