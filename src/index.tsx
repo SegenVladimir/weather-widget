@@ -6,7 +6,7 @@ import './i18n';
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
-        navigator.serviceWorker.register('./service-worker.js').catch((e) => console.error('cant register SW', e));
+        navigator.serviceWorker.register('./service-worker.js').catch();
     });
 }
 
