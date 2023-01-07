@@ -9,6 +9,8 @@ The application is designed to show the weather by the client's location. Curren
 
 Additionally, the application works with web worker to determine offline mode and caching. Also allows you to install the application as standalone
 
+The app supports Russian and English versions. The language is determined depending on the browser settings
+
 ## Available Scripts
 
 In the project directory, you can run:
