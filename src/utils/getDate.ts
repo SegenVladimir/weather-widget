@@ -1,4 +1,4 @@
-import { TDate } from '../types/types';
+import { TDate } from '../types/date';
 export const getDate = (date = new Date(), lang = navigator.language): TDate => {
     const week = new Intl.DateTimeFormat(lang, { weekday: 'long' }).format(date);
     return {

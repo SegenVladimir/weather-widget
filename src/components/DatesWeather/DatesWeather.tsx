@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import './DatesWeather.scss';
 import { DatesWeatherItem } from './DatesWeatherItem';
-import { TWeekDataWeather } from '../../utils/getWeather';
+import { TWeekDataWeather } from '../../types/weather';
 
 interface TProps {
     weekData: TWeekDataWeather[] | undefined;

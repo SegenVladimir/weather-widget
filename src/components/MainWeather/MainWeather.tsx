@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import './MainWeather.scss';
 import { useTranslation } from 'react-i18next';
-import { WeatherStatus } from '../../utils/getWeather';
+import { WeatherStatus } from '../../types/weather';
 
 interface TProps {
     temperature: number | undefined;

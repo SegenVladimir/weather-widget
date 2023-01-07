@@ -6,10 +6,12 @@ import { MoreInfo } from '../MoreInfo/MoreInfo';
 
 import { getDate } from '../../utils/getDate';
 import { getImage } from '../../utils/getImage';
-import { getAddress, TAddress } from '../../utils/getCity';
-import { TDataWeather, getWeather } from '../../utils/getWeather';
+import { getAddress } from '../../utils/getCity';
+import { TAddress } from '../../types/city';
+import { getWeather } from '../../utils/getWeather';
+import { TDataWeather } from '../../types/weather';
 
-import { TDate } from '../../types/types';
+import { TDate } from '../../types/date';
 
 import './App.scss';
 import { OfflineNotification } from '../OfflineNotification/OfflineNotification';
