@@ -26,6 +26,7 @@ export const MainInfo: FC = () => {
                 <MainWeather
                     temperature={context.weather?.temperature}
                     temperatureUnit={context.weather?.units.temperature}
+                    status={context.weather?.status}
                     isLoading={context.loading}
                 />
             </div>

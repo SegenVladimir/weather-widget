@@ -1,8 +1,16 @@
 .main-weather{
     &__icon{
-        background: url('../../../public/icons/sun.svg') no-repeat;
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-image: url('../../../public/icons/sun.svg');
         width: 95px;
         height: 95px;
+        &.rain{
+            background-image: url('../../../public/icons/rain.svg');
+        }
+        &.cloudy{
+            background-image: url('../../../public/icons/cloudy.svg');
+        }
     }
     &__temperature{
         font-size: 50px;

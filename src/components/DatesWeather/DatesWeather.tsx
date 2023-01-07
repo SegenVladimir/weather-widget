@@ -9,10 +9,6 @@ interface TProps {
 }
 
 export const DatesWeather: FC<TProps> = ({ weekData, isLoading }) => {
-    function getRandomIcon(list: string[]) {
-        return list[Math.floor(Math.random() * list.length)];
-    }
-
     return (
         <div className="dates-weather">
             {isLoading ? (
@@ -44,7 +40,7 @@ export const DatesWeather: FC<TProps> = ({ weekData, isLoading }) => {
                         <DatesWeatherItem
                             key={item.time}
                             active={!index}
-                            icon={getRandomIcon(['cloudy', 'rain', 'sun'])}
+                            icon={item.status}
                             week={item.date.weekShort}
                             temperature={Math.floor(item.temperature)}
                         />

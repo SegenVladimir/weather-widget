@@ -1,14 +1,16 @@
 import React, { FC } from 'react';
 import './MainWeather.scss';
 import { useTranslation } from 'react-i18next';
+import { WeatherStatus } from '../../utils/getWeather';
 
 interface TProps {
     temperature: number | undefined;
     temperatureUnit: string | undefined;
+    status?: WeatherStatus;
     isLoading?: boolean;
 }
 
-export const MainWeather: FC<TProps> = ({ temperature, temperatureUnit, isLoading }) => {
+export const MainWeather: FC<TProps> = ({ temperature, temperatureUnit, status, isLoading }) => {
     const { t } = useTranslation();
 
     return (
@@ -21,11 +23,11 @@ export const MainWeather: FC<TProps> = ({ temperature, temperatureUnit, isLoadin
                 </div>
             ) : (
                 <>
-                    <div className="main-weather__icon"></div>
+                    <div className={`main-weather__icon ${status}`}></div>
                     <div className="main-weather__temperature">
                         {temperature} {temperatureUnit}
                     </div>
-                    <div className="main-weather__type">{t('sunny')}</div>
+                    <div className="main-weather__type">{t(status ? status : '')}</div>
                 </>
             )}
         </div>
