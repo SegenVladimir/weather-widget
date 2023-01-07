@@ -8,5 +8,6 @@
   "wind": "Wind",
   "mm": "mm",
   "m/s": "m/s",
-  "lock_location": "You have disabled the location"
+  "lock_location": "You have disabled the location",
+  "offline_text": "No internet connections!"
 }

@@ -40,26 +40,26 @@ export const App = () => {
         window.addEventListener('online', () => setIsOnline(true));
         window.addEventListener('offline', () => setIsOnline(false));
     }, []);
-    window.addEventListener('online', () => console.log('asdasd'));
 
     useEffect(() => {
-        i18n.changeLanguage(navigator.language);
-        const location = window.navigator && window.navigator.geolocation;
-
-        location.getCurrentPosition(
-            (position) => {
-                getAddress(position.coords.latitude, position.coords.longitude).then((response) => setAddress(response));
-                getWeather(position.coords.latitude, position.coords.longitude).then((response) => {
-                    setWeather(response);
-                    setLoading(false);
-                });
-            },
-            () => setLocationEnabled(false)
-        );
-    }, []);
+        if (isOnline) {
+            i18n.changeLanguage(navigator.language);
+            const location = window.navigator && window.navigator.geolocation;
+            location.getCurrentPosition(
+                (position) => {
+                    getAddress(position.coords.latitude, position.coords.longitude).then((response) => setAddress(response));
+                    getWeather(position.coords.latitude, position.coords.longitude).then((response) => {
+                        setWeather(response);
+                        setLoading(false);
+                    });
+                },
+                () => setLocationEnabled(false)
+            );
+        }
+    }, [isOnline]);
 
     useEffect(() => {
-        if (address?.city) {
+        if (address?.city && isOnline) {
             getImage(address?.city)
                 .then((image) => {
                     setImage(image ? image : process.env.PUBLIC_URL + '/bg.png');
@@ -68,7 +68,7 @@ export const App = () => {
                     setImage(process.env.PUBLIC_URL + '/bg.png');
                 });
         }
-    }, [address]);
+    }, [address, isOnline]);
 
     return (
         <AppContext.Provider
