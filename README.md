@@ -1,4 +1,7 @@
 # Getting Started with Weather App
+
+![image weather app](https://ltdfoto.ru/images/2023/01/07/weather-app.png "image weather app")
+
 The application is designed to show the weather by the client's location. Current weather and brief information for four days.
 
 #### The following services are used for work:
